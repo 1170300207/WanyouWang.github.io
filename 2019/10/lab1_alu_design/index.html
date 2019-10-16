@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.57.2 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="Wanyou Wang">
+<meta name="keywords" content="">
+<meta name="description" content="
+时间比较短,只整理出这些,如果你们觉得有什么好的资料可以联系我,我贴在这里面
+">
+
+
+<meta property="og:description" content="
+时间比较短,只整理出这些,如果你们觉得有什么好的资料可以联系我,我贴在这里面
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lab1_alu_design">
+<meta name="twitter:title" content="Lab1_alu_design">
+<meta property="og:url" content="https://WanyouWang.github.io/2019/10/lab1_alu_design/">
+<meta property="twitter:url" content="https://WanyouWang.github.io/2019/10/lab1_alu_design/">
+<meta property="og:site_name" content="Wanyou Wang&#39;s Blog">
+<meta property="og:description" content="
+时间比较短,只整理出这些,如果你们觉得有什么好的资料可以联系我,我贴在这里面
+">
+<meta name="twitter:description" content="
+时间比较短,只整理出这些,如果你们觉得有什么好的资料可以联系我,我贴在这里面
+">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-10-16T23:57:23">
+  
+  
+    <meta property="article:modified_time" content="2019-10-16T23:57:23">
+  
+  
+  
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://WanyouWang.github.io/images/head.jpg">
+  <meta property="twitter:image" content="https://WanyouWang.github.io/images/head.jpg">
+
+
+    <title>Lab1_alu_design</title>
+
+    <link rel="icon" href="https://WanyouWang.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://WanyouWang.github.io/2019/10/lab1_alu_design/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://WanyouWang.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://WanyouWang.github.io/">Wanyou Wang&#39;s Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://WanyouWang.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://WanyouWang.github.io/images/head.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://WanyouWang.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://WanyouWang.github.io/images/head.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Wanyou Wang</h4>
+        
+          <h5 class="sidebar-profile-bio">Harbin Institute of Technology</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://WanyouWang.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://WanyouWang.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://WanyouWang.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://WanyouWang.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://WanyouWang.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/kakawait" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/636472/kakawait" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://WanyouWang.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Lab1_alu_design
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-10-16T23:57:23&#43;08:00">
+        
+  十月 16, 2019
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>
+时间比较短,只整理出这些,如果你们觉得有什么好的资料可以联系我,我贴在这里面
+</p>
+<h1 id="headline-1">
+Table Of Contents&#xa0;&#xa0;&#xa0;<span class="tags"><span>TOC</span></span>
+</h1>
+<ul>
+<li>
+<p>
+<a href="#verilog-教程">Verilog 教程</a>
+</p>
+<ul>
+<li>
+<p>
+<a href="#verilog-语法">Verilog 语法</a>
+</p>
+</li>
+<li>
+<p>
+<a href="#verilog-test-bench-写法">Verilog test bench 写法</a>
+</p>
+</li>
+<li>
+<p>
+<a href="#verilog-代码规范">Verilog 代码规范</a>
+</p>
+</li>
+<li>
+<p>
+<a href="#xilink-ise-教程">Xilink ISE 教程</a>
+</p>
+</li>
+</ul>
+</li>
+<li>
+<p>
+<a href="#alu-设计">ALU 设计</a>
+</p>
+<ul>
+<li>
+<p>
+<a href="#inputs-and-outputs">Inputs and Outputs</a>
+</p>
+</li>
+<li>
+<p>
+<a href="#parameters-for-option-code">Parameters for option code</a>
+</p>
+</li>
+<li>
+<p>
+<a href="#achieve">Achieve</a>
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="headline-2">
+Verilog 教程
+</h1>
+<h2 id="headline-3">
+Verilog 语法
+</h2>
+<ul>
+<li>
+<p>
+中文教程 <a href="verilog 教程"><a href="https://www.jianshu.com/p/9c3515d4d1da">https://www.jianshu.com/p/9c3515d4d1da</a></a>
+</p>
+</li>
+<li>
+<p>
+华为 Verilog 教程 <a href="Verilog 教程"><a href="https://wenku.baidu.com/view/c6b4b31214791711cc7917af.html">https://wenku.baidu.com/view/c6b4b31214791711cc7917af.html</a></a>
+</p>
+</li>
+<li>
+<p>
+基础语法整理 <a href="Verilog教程"><a href="https://yandongl.com/2018/09/07/verilog-basic-grammar/">https://yandongl.com/2018/09/07/verilog-basic-grammar/</a></a> 
+</p>
+</li>
+</ul>
+<h2 id="headline-4">
+Verilog test bench 写法
+</h2>
+<ul>
+<li>
+<p>
+英文教程 <a href="Testbench 教程"><a href="https://alchitry.com/blogs/tutorials/writing-test-benches">https://alchitry.com/blogs/tutorials/writing-test-benches</a></a>
+</p>
+</li>
+<li>
+<p>
+英文教程 <a href="Testbench 教程"><a href="https://people.ece.cornell.edu/land/courses/ece5760/Verilog/LatticeTestbenchPrimer.pdf">https://people.ece.cornell.edu/land/courses/ece5760/Verilog/LatticeTestbenchPrimer.pdf</a></a>
+</p>
+</li>
+<li>
+<p>
+中文教程 <a href="Testbench教程"><a href="https://blog.csdn.net/Times_poem/article/details/52036592">https://blog.csdn.net/Times_poem/article/details/52036592</a></a>
+</p>
+</li>
+</ul>
+<h2 id="headline-5">
+Verilog 代码规范
+</h2>
+<ul>
+<li>
+<p>
+下载链接 华为 verilog 规范 <a href="下载链接"><a href="http://group.chinaaet.com/109/3471">http://group.chinaaet.com/109/3471</a></a>
+</p>
+</li>
+<li>
+<p>
+华为 verilog 规范带注释 <a href="Verilog 规范"><a href="https://www.cnblogs.com/anne-vista/archive/2013/04/04/2999804.html">https://www.cnblogs.com/anne-vista/archive/2013/04/04/2999804.html</a></a>
+</p>
+</li>
+</ul>
+<h2 id="headline-6">
+Xilink ISE 教程
+</h2>
+<ul>
+<li>
+<p>
+项目的建立,仿真,烧录 <a href="Xilink ISE教程"><a href="https://www.cnblogs.com/ninghechuan/p/8587790.html">https://www.cnblogs.com/ninghechuan/p/8587790.html</a></a>
+</p>
+</li>
+<li>
+<p>
+ISE 可以使用外部编辑器,替代自带的编辑器
+</p>
+<ul>
+<li>
+<p>
+Edit -&gt; Preference -&gt; Editors -&gt; Editor
+</p>
+</li>
+<li>
+<p>
+选择 Custom,Command line syntax 中输入相应的启动命令,启动命令的列表 <a href="启动命令列表"><a href="https://www.xilinx.com/support/documentation/sw_manuals/xilinx10/isehelp/pn_db_editor_options.htm">https://www.xilinx.com/support/documentation/sw_manuals/xilinx10/isehelp/pn_db_editor_options.htm</a></a> 
+</p>
+<ul>
+<li>
+<p>
+例 <a href="使用 VS code 作为外部编辑器"><a href="https://blog.csdn.net/nnie2005/article/details/80468380">https://blog.csdn.net/nnie2005/article/details/80468380</a></a>
+</p>
+</li>
+<li>
+<p>
+建议你们使用 VS Code,以 VS code 为例,如果我想要使用 VS code 作为外部编辑器,可以使用命令
+<code class="verbatim">{Your VScode Paths\vscode.exe} $1</code> 如果 vscode 路径里有空格,需要使用{},$1 表示使用 vscode 打开当前文件
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+ISE 在 Win10 下闪退
+解决方法 <a href="解决方法"><a href="https://blog.csdn.net/kaien1226/article/details/76900676">https://blog.csdn.net/kaien1226/article/details/76900676</a></a> 注意 <strong>将 libPortabilityNOSH.dll 复制一份，然后将这个复制重命名为 libPortability.dll</strong>, 即用新的 libPortability.dll 替换原来的 libPortability.dll
+</p>
+</li>
+<li>
+<p>
+ISE 的安装路径和项目的路径中 <strong>不要包含中文</strong>
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="headline-7">
+ALU 设计  
+</h1>
+<h2 id="headline-8">
+Inputs and Outputs
+</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Direction</th>
+<th class="align-right">Digit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>card</td>
+<td>option code</td>
+<td>input</td>
+<td class="align-right">5</td>
+</tr>
+<tr>
+<td>a</td>
+<td>operand</td>
+<td>input</td>
+<td class="align-right">32</td>
+</tr>
+<tr>
+<td>b</td>
+<td>operand</td>
+<td>input</td>
+<td class="align-right">32</td>
+</tr>
+<tr>
+<td>cin</td>
+<td>carry in</td>
+<td>input</td>
+<td class="align-right">1</td>
+</tr>
+<tr>
+<td>f</td>
+<td>result</td>
+<td>output</td>
+<td class="align-right">32</td>
+</tr>
+<tr>
+<td>cout</td>
+<td>carry out</td>
+<td>output</td>
+<td class="align-right">1</td>
+</tr>
+<tr>
+<td>zero</td>
+<td>flag of zero</td>
+<td>output</td>
+<td class="align-right">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="headline-9">
+Parameters for option code
+</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Option Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADD</td>
+<td>add without carry</td>
+<td>5&#39;b00000</td>
+</tr>
+<tr>
+<td>ADDC</td>
+<td>add with carry</td>
+<td>5&#39;b00001</td>
+</tr>
+<tr>
+<td>SUB</td>
+<td>sub without carry</td>
+<td>5&#39;b00010</td>
+</tr>
+<tr>
+<td>SUBC</td>
+<td>sub with carry</td>
+<td>5&#39;b00011</td>
+</tr>
+<tr>
+<td>SUBR</td>
+<td>sub reversed without carry</td>
+<td>5&#39;b00100</td>
+</tr>
+<tr>
+<td>SUBCR</td>
+<td>sub reversed with carry</td>
+<td>5&#39;b00101</td>
+</tr>
+<tr>
+<td>ASA</td>
+<td>assign F with A</td>
+<td>5&#39;b00110</td>
+</tr>
+<tr>
+<td>ASB</td>
+<td>assign F with B</td>
+<td>5&#39;b00111</td>
+</tr>
+<tr>
+<td>RSA</td>
+<td>reverse a</td>
+<td>5&#39;b01000</td>
+</tr>
+<tr>
+<td>RSB</td>
+<td>reverse b</td>
+<td>5&#39;b01001</td>
+</tr>
+<tr>
+<td>OR</td>
+<td>logical add</td>
+<td>5&#39;b01010</td>
+</tr>
+<tr>
+<td>AND</td>
+<td>logical multiplication</td>
+<td>5&#39;b01011</td>
+</tr>
+<tr>
+<td>NOR</td>
+<td>not exclusive or</td>
+<td>5&#39;b01100</td>
+</tr>
+<tr>
+<td>XOR</td>
+<td>exclusive or</td>
+<td>5&#39;b01101</td>
+</tr>
+<tr>
+<td>NAND</td>
+<td>reversed logical multiplication</td>
+<td>5&#39;b01110</td>
+</tr>
+<tr>
+<td>ASZ</td>
+<td>assign F with 0</td>
+<td>5&#39;b01111</td>
+</tr>
+</tbody>
+</table>
+<h2 id="headline-10">
+Achieve
+</h2>
+<ul>
+<li>
+<p>
+示例 <a href="ALU 示例"><a href="https://www.cnblogs.com/liutianchen/p/7616754.html">https://www.cnblogs.com/liutianchen/p/7616754.html</a></a>
+</p>
+</li>
+<li>
+<p>
+注:这个代码写的很烂,但是还是能看清楚大致的思路
+</p>
+</li>
+<li>
+<p>
+进位可以使用连接符进行获取,设 result 为 32 bits,操作数 op1 和 op2 为 32 bits,进位标识符 cout 为 1bit
+</p>
+<pre class="example">
+//带进位加法
+{cout,result} = op1 + op2;
+</pre>
+<p>
+连接符表示 cout 和 result 合成一个 33 位的变量,如果 32 加法溢出,溢出会进位到第 33 位,即 cout 位,减法同理
+</p>
+</li>
+<li>
+<p>
+为了观察到溢出,测试用例可以使用边界的情况,如 a + b + cin = 32&#39;b11…10 + 1 + 1 = {1,32&#39;b0} = {cout,result}
+</p>
+</li>
+<li>
+<p>
+verilog 中～表示按位取反，！表示逻辑取反，逻辑运算应当使用！
+</p>
+</li>
+<li>
+<p>
+注意算术运算和逻辑运算的优先级，如果不能确定优先级请 <strong>使用小括号</strong>
+</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://WanyouWang.github.io/2019/10/hugo-spacemacs/" data-tooltip="Hugo &#43; Spacemacs">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://WanyouWang.github.io/2019/10/lab1_alu_design/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://WanyouWang.github.io/2019/10/lab1_alu_design/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://WanyouWang.github.io/2019/10/lab1_alu_design/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 Wanyou Wang. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://WanyouWang.github.io/2019/10/hugo-spacemacs/" data-tooltip="Hugo &#43; Spacemacs">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://WanyouWang.github.io/2019/10/lab1_alu_design/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://WanyouWang.github.io/2019/10/lab1_alu_design/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://WanyouWang.github.io/2019/10/lab1_alu_design/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2FWanyouWang.github.io%2F2019%2F10%2Flab1_alu_design%2F">
+          <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2FWanyouWang.github.io%2F2019%2F10%2Flab1_alu_design%2F">
+          <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2FWanyouWang.github.io%2F2019%2F10%2Flab1_alu_design%2F">
+          <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://WanyouWang.github.io/images/head.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Wanyou Wang</h4>
+    
+      <div id="about-card-bio">Harbin Institute of Technology</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Student
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://WanyouWang.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://WanyouWang.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/WanyouWang.github.io\/2019\/10\/lab1_alu_design\/';
+          
+            this.page.identifier = '\/2019\/10\/lab1_alu_design\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'Wanyou Wang\x27s Blog';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

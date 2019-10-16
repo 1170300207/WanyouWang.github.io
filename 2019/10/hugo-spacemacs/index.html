@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.57.2 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="Wanyou Wang">
+<meta name="keywords" content="">
+<meta name="description" content="
+网上相关资料较少，实在忍受不了国内的博客互相复制粘贴(人类的本质)但是有用的信息很少的现状
+
+
+我将自己的踩坑历程分享在这里，如果有问题，欢迎大家批评指正
+
+
+仍在学习阶段,水平不足,请大家见谅
+
+">
+
+
+<meta property="og:description" content="
+网上相关资料较少，实在忍受不了国内的博客互相复制粘贴(人类的本质)但是有用的信息很少的现状
+
+
+我将自己的踩坑历程分享在这里，如果有问题，欢迎大家批评指正
+
+
+仍在学习阶段,水平不足,请大家见谅
+
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hugo &#43; Spacemacs">
+<meta name="twitter:title" content="Hugo &#43; Spacemacs">
+<meta property="og:url" content="https://WanyouWang.github.io/2019/10/hugo-spacemacs/">
+<meta property="twitter:url" content="https://WanyouWang.github.io/2019/10/hugo-spacemacs/">
+<meta property="og:site_name" content="Wanyou Wang&#39;s Blog">
+<meta property="og:description" content="
+网上相关资料较少，实在忍受不了国内的博客互相复制粘贴(人类的本质)但是有用的信息很少的现状
+
+
+我将自己的踩坑历程分享在这里，如果有问题，欢迎大家批评指正
+
+
+仍在学习阶段,水平不足,请大家见谅
+
+">
+<meta name="twitter:description" content="
+网上相关资料较少，实在忍受不了国内的博客互相复制粘贴(人类的本质)但是有用的信息很少的现状
+
+
+我将自己的踩坑历程分享在这里，如果有问题，欢迎大家批评指正
+
+
+仍在学习阶段,水平不足,请大家见谅
+
+">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-10-01T01:35:13">
+  
+  
+    <meta property="article:modified_time" content="2019-10-01T01:35:13">
+  
+  
+  
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://WanyouWang.github.io/images/head.jpg">
+  <meta property="twitter:image" content="https://WanyouWang.github.io/images/head.jpg">
+
+
+    <title>Hugo &#43; Spacemacs</title>
+
+    <link rel="icon" href="https://WanyouWang.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://WanyouWang.github.io/2019/10/hugo-spacemacs/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://WanyouWang.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://WanyouWang.github.io/">Wanyou Wang&#39;s Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://WanyouWang.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://WanyouWang.github.io/images/head.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://WanyouWang.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://WanyouWang.github.io/images/head.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Wanyou Wang</h4>
+        
+          <h5 class="sidebar-profile-bio">Harbin Institute of Technology</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://WanyouWang.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://WanyouWang.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://WanyouWang.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://WanyouWang.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://WanyouWang.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/kakawait" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/636472/kakawait" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://WanyouWang.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Hugo &#43; Spacemacs
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-10-01T01:35:13&#43;08:00">
+        
+  十月 1, 2019
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>
+网上相关资料较少，实在忍受不了国内的博客互相复制粘贴(人类的本质)但是有用的信息很少的现状
+</p>
+<p>
+我将自己的踩坑历程分享在这里，如果有问题，欢迎大家批评指正
+</p>
+<p>
+仍在学习阶段,水平不足,请大家见谅
+</p>
+<hr>
+<h1 id="headline-1">
+概述
+</h1>
+<h2 id="headline-2">
+系统环境
+</h2>
+<p>
+Manjaro KDE         
+</p>
+<p>
+<strong>[windows 环境下还没有尝试，windows 安装各种东西很复杂，需要设置各种环境变量和文件路径，已弃坑]</strong> 
+</p>
+<p>
+Windows 环境下，建议使用 git 来进行操作(已集成 ssh)
+或通过 msys2 虚拟环境，或 WSL 中安装 linux，修改 cmder 启动项替代 windows 的 powershell(后续可能会提供相应的踩坑经历)
+</p>
+<h2 id="headline-3">
+Hugo
+</h2>
+<h3 id="headline-4">
+简述
+</h3>
+<h4 id="headline-5">
+Hugo 是什么 
+</h4>
+<p>
+Hugo 是由 Go 语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。  
+</p>
+<p>
+同类型的有 Hexo,Jekyll,WordPress 等,其中 hugo 的生成速度比较快,依赖较少,故而推荐使用 Hugo
+如果想要拥有更炫酷的主题,可以考虑使用 Hexo,速度慢于 Hugo
+</p>
+<h4 id="headline-6">
+使用 spacemacs 来编写博客
+</h4>
+<ul>
+<li>
+<p>
+可以使用任何的支持 markdown 文件格式的编辑器来编写博客,如 vs code ,sublime,Typora 等
+</p>
+</li>
+<li>
+<p>
+对 spacemacs 有特殊的感情(毕竟已经使用了很久了),spacemacs 配合 evil-mode 以及丰富的快捷键(根本记不住)可以实现快捷的操作
+</p>
+</li>
+</ul>
+<p>
+emacs 的 org-mode 很强大,配合 latex 可以完成论文或小型笔记的需求,可以插入图片(不是很方便), <strong><span style="text-decoration: underline;">emacs 几乎可以实现你的任何需求</span></strong>
+</p>
+<ul>
+<li>
+<p>
+总之,挑一个 <strong>顺手</strong> 的编辑器
+</p>
+</li>
+</ul>
+<h3 id="headline-7">
+Hugo 部署方案
+</h3>
+<p>
+可以选择将自己的博客部署在自己的服务器上,但是穷学生经济实力有限,所以选择将 hugo 部署在 github 上
+</p>
+<h1 id="headline-8">
+Hugo 安装及配置
+</h1>
+<h2 id="headline-9">
+hugo 安装(使用包管理器 yay)
+</h2>
+<p>
+需要在 manjaro 中安装 yay,命令为 <code class="verbatim">sudo pacman -S yay</code> 
+<code class="verbatim">yay -S hugo</code> (注意,使用 yay 命令时不要加 sudo)
+</p>
+<h2 id="headline-10">
+本地博客仓库创建
+</h2>
+<ul>
+<li>
+<p>
+创建本地博客仓库,命令为 <code class="verbatim">hugo new site example</code> ,example 处填上自定义名称
+</p>
+</li>
+</ul>
+<h2 id="headline-11">
+安装主题
+</h2>
+<p>
+Hugo themes 官网为 <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a>
+</p>
+<ul>
+<li>
+<p>
+需要将对应的 theme 从 github 上 clone 到本地博客仓库的 themes 文件夹中
+</p>
+</li>
+<li>
+<p>
+在这里我使用的 themes 是 Tranquilpeak,过程如下
+</p>
+</li>
+</ul>
+<div class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  cd localblog/themes
+  git clone https://github.com/kakawait/hugo-tranquilpeak-theme.git
+
+  <span style="color:#75715e">#localblog处填本地仓库的地址</span></code></pre></div>
+</div>
+<ul>
+<li>
+<p>
+在本地仓库的配置文件中修改 theme = &#34;主题所在文件夹的名称&#34;即可
+</p>
+</li>
+<li>
+<p>
+例,在这里 theme = &#34;hugo-tranquilpeak-theme&#34;
+</p>
+</li>
+</ul>
+<h2 id="headline-12">
+修改配置文件
+</h2>
+<p>
+<strong>各个主题都有推荐的配置文件，即模板配置，一般保存在相应的 yourTheme/exampleSite 中,可在该配置的基础上进行修改</strong>
+<strong>不同的主题可能会有不同的博客地址，如 content/post　或　content/posts,需要根据不同的主题修改对应的 hugo 配置，以及 easy-hugo 配置</strong>
+使用推荐配置的过程如下
+</p>
+<ul>
+<li>
+<p>
+用 yourTheme/exampleSite 文件夹下的配置文件 config.toml 复制到博客仓库下,用于替换原有的配置文件
+</p>
+</li>
+<li>
+<p>
+根据 theme 的官网指导修改 config.toml,注意 baseURL 处填写博客域名,例 <code class="verbatim">baseURL = &#34;https://WanyouWang.github.io&#34;</code>
+</p>
+</li>
+<li>
+<p>
+根据需要修改博客标题,修改作者信息,开放评论区和链接共享区,在这里需要注意保存图像的文件夹,在博客的 static 区和 yourTheme/images 区都有保存图像的文件夹,其中 static 区文件夹优先级高于 yourTheme/images
+</p>
+</li>
+</ul>
+<h1 id="headline-13">
+github 部署及配置
+</h1>
+<h2 id="headline-14">
+在 github 上创建个人项目
+</h2>
+<p>
+项目名称应为 githubname.github.io(<strong>githubname 中填写你的的 github 名称,不可填写其他名称</strong>)
+通过访问 githubname.github.io，观察项目是否创建成功
+</p>
+<h2 id="headline-15">
+git ssh 连接
+</h2>
+<p>
+可以使用 ssh 秘钥直接与 github 进行链接，避免重复输入密码，方便后续利用脚本一键部署
+</p>
+<h3 id="headline-16">
+安装 ssh
+</h3>
+<p>
+arch linux 下 ssh 开源管理软件为 openssh
+安装命令如下 <code class="verbatim">yay -S openssh</code>
+</p>
+<h3 id="headline-17">
+生成 ssh 秘钥  
+</h3>
+<p>
+生成 ssh 秘钥的操作为
+</p>
+<div class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  ssh-keygen -t rsa -C <span style="color:#e6db74">&#34;your_email@example.com&#34;</span>
+  <span style="color:#75715e">#&#34;your_email@example.com&#34;处填写你的邮箱地址</span>
+  <span style="color:#75715e">#接下来按照要求输入公钥的名字,例如id_rsa,接下来输入私钥的密码(需要记住)</span>
+  <span style="color:#75715e">#将ssh私钥添加到ssh-agent</span>
+  ssh-add ~/.ssh/id_rsa</code></pre></div>
+</div>
+<p>
+<strong>注意</strong>
+xxx.pub 是公钥，可以给出
+xxx 是私钥，不可泄露
+</p>
+<h3 id="headline-18">
+将 ssh 私钥与 github 相关联
+</h3>
+<ul>
+<li>
+<p>
+登录 github,进入 settings -&gt; SSH and GPG keys
+</p>
+</li>
+<li>
+<p>
+在 SSH keys 处,选择 new SSH keys
+</p>
+</li>
+<li>
+<p>
+上传上一步生成的私钥并保存 
+</p>
+</li>
+<li>
+<p>
+在本地测试连接 <code class="verbatim">ssh -T git@github.com</code>,如果出现下述文字则说明 ssh 配置成功
+</p>
+<pre class="example">
+" Hi xxx! You've successfully authenticated, but GitHub does not provide shell access."
+</pre>
+</li>
+</ul>
+<h3 id="headline-19">
+编辑 ~/.ssh/config 文件(中英文对齐） 
+</h3>
+<p>
+当有多个账户需要管理时，可在 config 文件中设置 host 别名和主机地址(若该文件不存在,则创建一个新的文件)
+<strong>此文件在 spacemacs easy-hugo github 一键部署中也需要使用</strong> , 填写内容如下
+<strong>例</strong>
+</p>
+<div class="src src-text">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Host blog.github.com  
+    HostName github.com  
+    User git  
+    IdentityFile ~/.ssh/id_rsa</code></pre></div>
+</div>
+<table>
+<tbody>
+<tr>
+<td>Host</td>
+<td>主机别名，用户登录时需要</td>
+</tr>
+<tr>
+<td>HostName</td>
+<td>主机名，远程连接的服务器</td>
+</tr>
+<tr>
+<td>User</td>
+<td></td>
+</tr>
+<tr>
+<td>IdentityFile</td>
+<td>用户登录私钥</td>
+</tr>
+</tbody>
+</table>
+<p>
+这时可以通过访问 blog.github.com 来访问你的 github,可以通过 <code class="verbatim">ssh -T blog.github.com</code> 进行访问测试
+</p>
+<h1 id="headline-20">
+使用 hugo 编写发布博客
+</h1>
+<h2 id="headline-21">
+编写博客
+</h2>
+<ul>
+<li>
+<p>
+在本地博客仓库下,创建新博文,命令为 <code class="verbatim">hugo new post\xxx.md</code> 或 <code class="verbatim">hugo new posts\xxx.md</code> (根据不同主题选择是 post 文件夹还是 posts 文件夹)
+</p>
+</li>
+<li>
+<p>
+这里使用 ox-hugo 将 org 文件转换为 md 文件,再使用 md 文件进行发布(也可以直接编写 markdown 文件)
+</p>
+</li>
+<li>
+<p>
+hugo 原生支持 org,可以直接发布 org 文件,但是支持不是很好,有时候排版会出现一些小 bug
+</p>
+</li>
+</ul>
+<p>
+注意博客的编写完成情况
+script: true 草稿状态,可以预览,不会发布
+script: false 完成状态，可以预览和发布 
+</p>
+<h2 id="headline-22">
+预览博客
+</h2>
+<p>
+在博客的根目录下,需要在本地启动 hugo 服务器，命令为 <code class="verbatim">hugo server -D</code> 
+服务器启动后,浏览器中输入 localhost:1313 进行预览
+</p>
+<h2 id="headline-23">
+发布博客
+</h2>
+<ul>
+<li>
+<p>
+在博客的根目录下，编译博客，命令为 <code class="verbatim">hugo</code> (如需使用配置文件外的主题，可在 hugo 后添加主题信息),编译完成后，编译结果保存在 public 文件夹中
+</p>
+</li>
+<li>
+<p>
+我们的博客部署在 github 上,将 public 文件夹中的内容上传 github 的博客仓库中,博客会自动链接，此后可访问自己的博客域名观察结果
+</p>
+</li>
+<li>
+<p>
+这里可以通过常规的操作使用 git,如 github desktop,git 命令等,也可以使用 emacs 的 magit 插件,以及后续的 <strong>一键部署脚本</strong>
+</p>
+</li>
+</ul>
+<h1 id="headline-24">
+spacemacs 配置
+</h1>
+<h2 id="headline-25">
+所需 layer
+</h2>
+<p>
+org
+ox-hugo
+easy-hugo
+</p>
+<h2 id="headline-26">
+ox-hugo 配置
+</h2>
+<p>
+<strong>ox-hugo 不能直接通过 spacemacs 的 addition-packages 安装，需要根据官网给出的条件进行配置，或者在个人配置中添加下列语句</strong> 
+<code class="verbatim">(setq ox-hugo-enable-support t)</code> 系统会自动安装 ox-hugo
+</p>
+<p>
+在当前的博文开头段,可以使用以下模板
+</p>
+<div class="src src-text">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># -*- mode: snippet -*-
+# name: hugo
+# key: h
+# --
+#+HUGO_BASE_DIR: ../../
+#+TITLE: $1
+#+OPTIONS: toc:2 \n:t
+#+DATE:`(format-time-string &#34;&lt;%Y-%m-%d %H:%M&gt;&#34; (current-time))`
+#+HUGO_AUTO_SET_LASTMOD: t
+#+HUGO_TAGS: $2
+#+HUGO_CATEGORIES: $3
+#+HUGO_DRAFT: false
+
+$0</code></pre></div>
+</div>
+<ul>
+<li>
+<p>
+其中 HUGO_BASE_DIR 用于 org -&gt; md 文件时,确认文件生成的路径
+</p>
+</li>
+<li>
+<p>
+OPTIONS 可以自定义 toc:2 指 Table of Contents 支持到二级标题
+</p>
+</li>
+<li>
+<p>
+可以在 org-mode 中开启 org-hugo-auto-export-mode,可以自动将 org 转换为 md 文件
+</p>
+</li>
+<li>
+<p>
+在 org-mode 下,快捷键 , e e H h 可以手动将 org 文件导出为 md 文件 
+</p>
+</li>
+</ul>
+<h2 id="headline-27">
+easy-hugo 配置
+</h2>
+<h3 id="headline-28">
+easy-hugo 各变量及其含义
+</h3>
+<table>
+<tbody>
+<tr>
+<td>easy-hugo-basedir</td>
+<td>hugo 本地仓库地址</td>
+</tr>
+<tr>
+<td>easy-hugo-postdir</td>
+<td>hugo 主题对应的博客存放地址(根据主题不同,为 post 或 posts 文件夹</td>
+</tr>
+<tr>
+<td>easy-hugo-url</td>
+<td>博客地址</td>
+</tr>
+<tr>
+<td>easy-hugo-sshdomain</td>
+<td>使用的 ssh 别名</td>
+</tr>
+<tr>
+<td>easy-hugo-root</td>
+<td>编译后的博客的存放地址</td>
+</tr>
+<tr>
+<td>easy-hugo-default-ext</td>
+<td>easy-hugo 默认博客文件类型(默认为.md)</td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong>例</strong>
+</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">  (<span style="color:#66d9ef">setq</span> easy-hugo-basedir <span style="color:#e6db74">&#34;~/Documents/Blog/Melancholy/&#34;</span>
+        easy-hugo-postdir <span style="color:#e6db74">&#34;content/post&#34;</span>
+        easy-hugo-url <span style="color:#e6db74">&#34;https://wanyouwang.github.io/&#34;</span>
+        easy-hugo-sshdomain <span style="color:#e6db74">&#34;blog.github.com&#34;</span>
+        easy-hugo-root <span style="color:#e6db74">&#34;~/Documents/Blog/Melancholy/public/&#34;</span>
+        easy-hugo-default-ext <span style="color:#e6db74">&#34;.org&#34;</span>
+        )</code></pre></div>
+</div>
+<h3 id="headline-29">
+evil-mode 下重新定义键位
+</h3>
+<p>
+spacemacs layer 结构
+</p>
+<table>
+<tbody>
+<tr>
+<td>Readme.org</td>
+<td></td>
+</tr>
+<tr>
+<td>packages.el</td>
+<td>列出需要的包以及配置包(可使用 use-package)</td>
+</tr>
+<tr>
+<td>funcs.el</td>
+<td>自定义函数</td>
+</tr>
+<tr>
+<td>config.el</td>
+<td>自定义配置</td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong>在 funcs.el 添加自定义函数(函数名可自定义，也可使用 layer_name/function_name)，用于修改 easy-hugo 在 evil-mode 中的键位定义</strong>
+<strong>注意　evil-define-key 和 list xxx mode</strong> 
+</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">  (defun easy-hugo-keymaps ()
+    (interactive)
+    (evil-define-key
+      (<span style="color:#a6e22e">list</span> <span style="color:#e6db74">&#39;normal</span> <span style="color:#e6db74">&#39;insert</span> <span style="color:#e6db74">&#39;visual</span> <span style="color:#e6db74">&#39;motion</span>)
+      easy-hugo-mode-map
+      <span style="color:#e6db74">&#34;n&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-newpost</span>
+      <span style="color:#e6db74">&#34;D&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-article</span>
+      <span style="color:#e6db74">&#34;p&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-preview</span>
+      <span style="color:#e6db74">&#34;P&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-publish</span>
+      <span style="color:#e6db74">&#34;o&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-open</span>
+      <span style="color:#e6db74">&#34;d&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-delete</span>
+      <span style="color:#e6db74">&#34;e&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-open</span>
+      <span style="color:#e6db74">&#34;c&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-open-config</span>
+      <span style="color:#e6db74">&#34;f&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-open</span>
+      <span style="color:#e6db74">&#34;N&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-no-help</span>
+      <span style="color:#e6db74">&#34;v&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-view</span>
+      <span style="color:#e6db74">&#34;r&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-refresh</span>
+      <span style="color:#e6db74">&#34;g&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-refresh</span>
+      <span style="color:#e6db74">&#34;s&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-sort-time</span>
+      <span style="color:#e6db74">&#34;S&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-sort-char</span>
+      <span style="color:#e6db74">&#34;G&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-github-deploy</span>
+      <span style="color:#e6db74">&#34;A&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-amazon-s3-deploy</span>
+      <span style="color:#e6db74">&#34;C&#34;</span> <span style="color:#e6db74">&#39;easy-hugo-google-cloud-storage-deploy</span>
+      <span style="color:#e6db74">&#34;q&#34;</span> <span style="color:#e6db74">&#39;evil-delete-buffer</span>
+      (kbd <span style="color:#e6db74">&#34;TAB&#34;</span>) <span style="color:#e6db74">&#39;easy-hugo-open</span>
+      (kbd <span style="color:#e6db74">&#34;RET&#34;</span>) <span style="color:#e6db74">&#39;easy-hugo-preview</span>)
+    )</code></pre></div>
+</div>
+<h3 id="headline-30">
+github 一键部署
+</h3>
+<p>
+easy-hugo 建议使用脚本一键部署
+在 Hugo 根目录下,创建脚本
+<strong>注意脚本创建完成后，需要修改脚本的运行权限，否则不能直接执行</strong> 
+<code class="verbatim">chmod +x ~/xxxblog_folder/deploy.sh</code>
+</p>
+<p>
+<strong>配置 1</strong>
+</p>
+<div class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  <span style="color:#75715e">#!/bin/bash</span>
+  echo -e <span style="color:#e6db74">&#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34;</span>
+
+  <span style="color:#75715e"># Build the project.</span>
+  hugo <span style="color:#75715e"># if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`</span>
+
+  <span style="color:#75715e"># Go To Public folder</span>
+  cd public
+
+  git init
+  git remote add origin git@github.com:WanyouWang/WanyouWang.github.io.git
+  <span style="color:#75715e"># Add changes to git.</span>
+  git add .
+
+  <span style="color:#75715e"># Commit changes.</span>
+  msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rebuilding site `date`&#34;</span>
+  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -eq <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>
+    <span style="color:#66d9ef">then</span> msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">fi</span>
+  git commit -m <span style="color:#e6db74">&#34;</span>$msg<span style="color:#e6db74">&#34;</span>
+
+  <span style="color:#75715e"># Push source and build repos.</span>
+  git push origin master -f
+
+  <span style="color:#75715e"># Come Back up to the Project Root</span>
+  cd ..
+
+  rm -rf public</code></pre></div>
+</div>
+<p>
+该脚本会从博客远程仓库下载之前的博客项目，并对其进行修改
+不容易出现问题，但是不会记录之前的博客版本
+注意 git remote 处需要添加自己的博客 ssh 地址
+</p>
+<p>
+<strong>官网配置</strong>  
+</p>
+<div class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  <span style="color:#75715e">#!/bin/sh</span>
+
+  <span style="color:#75715e"># If a command fails then the deploy stops</span>
+  set -e
+
+  printf <span style="color:#e6db74">&#34;\033[0;32mDeploying updates to GitHub...\033[0m\n&#34;</span>
+
+  <span style="color:#75715e"># Build the project.</span>
+  hugo <span style="color:#75715e"># if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`</span>
+
+  <span style="color:#75715e"># Go To Public folder</span>
+  cd public
+
+  <span style="color:#75715e"># Add changes to git.</span>
+  git add .
+
+  <span style="color:#75715e"># Commit changes.</span>
+  msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rebuilding site </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span>$*<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+      msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$*<span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">fi</span>
+  git commit -m <span style="color:#e6db74">&#34;</span>$msg<span style="color:#e6db74">&#34;</span>
+
+  <span style="color:#75715e"># Push source and build repos.</span>
+  git push origin master</code></pre></div>
+</div>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://WanyouWang.github.io/2019/10/lab1_alu_design/" data-tooltip="Lab1_alu_design">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://WanyouWang.github.io/2019/10/hugo-spacemacs/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://WanyouWang.github.io/2019/10/hugo-spacemacs/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://WanyouWang.github.io/2019/10/hugo-spacemacs/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 Wanyou Wang. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://WanyouWang.github.io/2019/10/lab1_alu_design/" data-tooltip="Lab1_alu_design">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://WanyouWang.github.io/2019/10/hugo-spacemacs/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://WanyouWang.github.io/2019/10/hugo-spacemacs/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://WanyouWang.github.io/2019/10/hugo-spacemacs/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2FWanyouWang.github.io%2F2019%2F10%2Fhugo-spacemacs%2F">
+          <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2FWanyouWang.github.io%2F2019%2F10%2Fhugo-spacemacs%2F">
+          <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2FWanyouWang.github.io%2F2019%2F10%2Fhugo-spacemacs%2F">
+          <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://WanyouWang.github.io/images/head.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Wanyou Wang</h4>
+    
+      <div id="about-card-bio">Harbin Institute of Technology</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Student
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://WanyouWang.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://WanyouWang.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/WanyouWang.github.io\/2019\/10\/hugo-spacemacs\/';
+          
+            this.page.identifier = '\/2019\/10\/hugo-spacemacs\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'Wanyou Wang\x27s Blog';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

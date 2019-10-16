@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://WanyouWang.github.io/2019/10/lab1_alu_design/</loc>
+    <lastmod>2019-10-16T23:57:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://WanyouWang.github.io/post/</loc>
+    <lastmod>2019-10-16T23:57:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://WanyouWang.github.io/</loc>
+    <lastmod>2019-10-16T23:57:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://WanyouWang.github.io/2019/10/hugo-spacemacs/</loc>
+    <lastmod>2019-10-01T01:35:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://WanyouWang.github.io/test/</loc>
+    <lastmod>2019-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://WanyouWang.github.io/archives/</loc>
+  </url>
+  
+  <url>
+    <loc>https://WanyouWang.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://WanyouWang.github.io/tags/</loc>
+  </url>
+  
+</urlset>
